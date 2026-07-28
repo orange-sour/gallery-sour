@@ -1,5 +1,5 @@
-const USER="purple-colombe";
-const REPO="rpg-assets";
+const USER="orange-sour";
+const REPO="gallery-sour";
 const ROOT="assets";
  
 const gallery=document.getElementById("gallery");
