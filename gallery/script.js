@@ -48,7 +48,7 @@ function showImages(images){
         card.className="icon";
         card.innerHTML=`
             <img src="${image.download_url}" alt="">
-            <button class="copy" title="Copier l'URL">⧉</button>
+            <button class="copy" title="Copier l'URL">copier</button>
         `;
         const button=card.querySelector(".copy");
 
@@ -62,9 +62,9 @@ function showImages(images){
         button.onclick=(e)=>{
             e.stopPropagation();
             navigator.clipboard.writeText(image.download_url);
-            button.textContent="✓";
+            button.textContent="merci ♡";
             setTimeout(()=>{
-                button.textContent="⧉";
+                button.textContent="copier";
             },1000);
         };
         gallery.appendChild(card);

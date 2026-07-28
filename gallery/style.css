@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @font-face {
     font-family: "Astone Nouvea";
     src: url("./fonts/Astone-Nouvea.woff2") format("woff2");
@@ -10,11 +14,11 @@
 }
 
 :root {
-    --bg1: #C98768;
-    --bg2: #1d1d29;
+    --bg1: #AA6A4C;
+    --bg2: #DBB7A6;
     --bg3: #3a3a55;
     --bg4: #616a75;
-    --tx1: #d2d1c1;
+    --tx1: black;
 }
 
 * {
@@ -22,10 +26,10 @@
 }
 
 body {
-margin: 0 !important;
-  background-blend-mode: darken;  
-background-color: var(--bg1); 
-  position: relative;
+    margin: 0 !important;
+    background-blend-mode: darken;  
+    background-color: var(--bg1); 
+    position: relative;
     margin: 0;
     padding: 40px;
     color: var(--tx1);
@@ -41,26 +45,29 @@ body::before {
   width: 100%;
   height: 100%;
   /* Ton image de fond */
-  background-image: url('https://i.ibb.co/TxrbSLz9/indrek-gutmann-c-ZBd-UFHl6-HI-unsplash.jpg');
+  background-image:url('https://www.transparenttextures.com/patterns/gray-floral.png');
   background-size: cover;
-  /*transform: scale(1.2);*/
+  transform: scale(3.2);
   /* On s'assure que le zoom part du centre */
   /*transform-origin: center;*/
   /*transform: scaleX(-1);*/
   background-position: top;
   background-repeat:repeat;
-  
+  background-size: auto;
+   -webkit-backdrop-filter: blur(1px);
   /* Réglage de l'opacité de l'image ici */
-  opacity: 0.05; 
-  
+  opacity: 0.4; 
+  filter: blur(0.7px);
   /* Place l'image derrière le contenu du body */
   z-index: -1; 
 }
 
 h1 {
     font-family: 'Fraunces';
-    font-size: 42px;
-font-style:italic;
+    font-size: 38px;
+    font-style:italic;
+    color:white;
+    opacity:0.9;
 }
 
 .toolbar {
@@ -76,28 +83,43 @@ font-style:italic;
 }
 
 #breadcrumb {
-    font-size: 12px;
-    font-style: italic;
-    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 500;
+    font-style:italic;
+    letter-spacing: 2px;
+    font-family:fraunces;
+    color:white;
+    opacity:0.85;
+}
+
+#breadcrumb::before {
+    content:'✰ ';
+    font-style:normal;
+    font-weight:bold;
+    font-size: 18px;
+    margin-right:4px;
+
 }
 
 #back {
     padding: 10px 16px;
-    background: var(--tx1);
-    border:1px solid #0a0605;
-    border-radius: 0px;
+    background:rgba(140, 78, 50, 1);
     cursor: pointer;
     transition: .2s;
     color: var(--bg2);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-transform: lowercase;
     font-weight: 600;
     font-size: 12px;
+    font-family:space mono;
+    letter-spacing:1px;
+    border: none;
+    filter:brightness(1.2);
 }
 
 #back:hover {
-    background: var(--bg3);
+    text-decoration:underline;
     color: var(--tx1);
+    border: none;
 }
 
 .hidden {
@@ -119,22 +141,26 @@ font-style:italic;
     width:240px;
     height:160px;
     padding:12px;
-    background:var(--bg2);
-    border:1px solid var(--bg3);
+    background:#DBB7A6;
+    border:0px solid var(--bg3);
     border-radius:0px;
     cursor:pointer;
     transition:.2s;
 }
 
 .folder:hover {
-    border-color: var(--bg4);
+    opacity:0.8;
+    text-decoration:underline;
 }
 
 .folder .name {
     margin-top:10px;
     text-align:center;
-    font-size:14px;
-    color: var(--tx1);
+    font-size:16px;
+    color: black;
+    font-family:space mono;
+    letter-spacing:1px;
+    
 }
 
 .folder-icon {
@@ -164,25 +190,42 @@ font-style:italic;
     position: absolute;
     top: 8px;
     right: 8px;
-    width: 30px;
+    width: 70px;
     height: 30px;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    background: rgba(13,17,23,.85);
-    color: var(--tx1);
-    border: 1px solid var(--bg3);
-    border-radius: 0px;
+    background: #AA6A4C;
+    color: white;
     cursor: pointer;
     transition: .2s;
+    border:none;
+    font-family:space mono;
+    letter-spacing:0.5px;
+    font-size:11px;
 }
 
 .icon:hover .copy {
     opacity: 1;
+    border:none;
+}
+.gif-badge {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
+.gif-badge.hidden {
+    display: none;
+}
 .preview {
     position: fixed;
     inset: 0;

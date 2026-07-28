@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>poemes orange's gallery</title>
-    <link rel="icon" type="image/png" href="png/folder.png"/>
+    <link rel="icon" type="image/png" href="png/icon.png"/>
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 <div class="container">
-    <h1>Ma galerie</h1> 
+    <h1>Ma galerie ~ credit : orange</h1> 
     <!-- caché au départ -->
     <div class="toolbar">
         <button id="back" class="hidden">
@@ -29,7 +29,10 @@
     <div class="preview-content">
         <button id="prevImage" class="nav prev">←</button>
 
-        <img id="previewImage" src="" alt="">
+        <div id="previewImageWrapper" style="position: relative;">
+    <img id="previewImage" src="" alt="">
+    <span id="gifBadge" class="gif-badge hidden">GIF</span>
+</div>
 
         <button id="nextImage" class="nav next">→</button>
     </div>
