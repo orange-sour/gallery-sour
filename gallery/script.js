@@ -1,6 +1,6 @@
 const USER="orange-sour";
 const REPO="gallery-sour";
-const ROOT="assets";
+const ROOT="avatars";
  
 const gallery=document.getElementById("gallery");
 const back=document.getElementById("back");
